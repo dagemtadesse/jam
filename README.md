@@ -1,6 +1,6 @@
 # Jam
 
-An online auction website designed primaryly for students, so they can buy and sell staffs.
+An online auction website designed for students, so they can buy and sell staffs.
 
 ## GROUP MEMBERS
 
