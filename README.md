@@ -4,7 +4,7 @@ An online auction website designed primaryly for students, so they can buy and s
 
 GROUP MEMBERS
 
-** DAGEM TADESSE UGR/7445/12
+** DAGEM TADESSE UGR/7445/12\n
 ** HELAWIT ABRAHAM UGR/2966/12
 ** NAOMI TIMOTEOS UGR/7593/12
 ** YEABSIRA LEULSEGED UGR/6049/12
