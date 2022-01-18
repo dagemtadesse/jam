@@ -14,4 +14,3 @@ public class User {
     public static enum Role {
         REGULAR, ADMIN
     }
-}

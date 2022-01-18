@@ -1,5 +1,7 @@
 package com.rune.Jam;
 
+import lombok.Data;
+
 @Data
 public class Channel {
     private String name;
