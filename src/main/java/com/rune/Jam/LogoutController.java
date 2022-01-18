@@ -1,3 +1,4 @@
+package com.rune.Jam;
 
 @Controller
 public class LogoutController{
