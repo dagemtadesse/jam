@@ -1,5 +1,6 @@
 package com.rune.Jam;
 
+@Data
 public class Post {
     private String text;
     private String media;
