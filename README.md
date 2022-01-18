@@ -1,5 +1,5 @@
 # Jam
-Jam is a chatroom service that allows its users to share content, comments, news as well
+Jam is a news aggregator online platform that allows its users to share content, comments, news as well
 as leave feedback on different channels that are hosted on the site.
 
 Channels can also be narrowed down to subchannels to allow specific taregted content sharing
