@@ -19,7 +19,25 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+<<<<<<< HEAD
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+=======
+			<artifactId>spring-boot-starter-web-services</artifactId>
+			<version>2.6.2</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>1.2.6</version>
+		</dependency>
+
+		<dependency>
+			<groupId>spring</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>1.0.2</version>
+>>>>>>> 324b99530ccc9f22455d6ba6a3c9204dcfdf36ac
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
