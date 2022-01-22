@@ -1,0 +1,46 @@
+body {
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+}
+header {
+    background-color: #0047ab;
+    color: white;
+
+}
+
+a.btn {
+    border: 1px solid #007fff;
+    color: white;
+    background-color: #1789fc;
+}
+
+footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #0047ab;
+    color: white;
+    margin-top: auto;
+}
+
+main {
+    margin-bottom: 3em;
+}
+
+li.nav-item {
+    display: flex;
+    align-items: center;
+}
+
+a.footer-link {
+    text-decoration: none;
+    padding: 0 2em;
+    color: rgba(255, 255, 255, .5);
+    max-width: fit-content;
+    
+}
+
+a.footer-link:hover, a.footer-link:active {
+    color: white;
+}
