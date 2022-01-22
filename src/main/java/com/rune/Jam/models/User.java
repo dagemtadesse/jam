@@ -1,12 +1,10 @@
 package com.rune.Jam.models;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
-
 import javax.persistence.*;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @Entity
@@ -26,10 +24,10 @@ public class User {
     private Role userRole;
 
     @OneToMany
-    private Set<Channel> bookmarks;
+    private List<Channel> bookmarks = new ArrayList<>();
 
     @OneToMany(mappedBy = "creator")
-    private Set<Channel> createdChannels;
+    private List<Channel> createdChannels = new ArrayList<>();
 
     public User(String fullName, String userHandle, String email, String phoneNumber, String occupation, Role userRole) {
         this.fullName = fullName;

@@ -2,10 +2,10 @@ package com.rune.Jam.models;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @Entity
@@ -26,13 +26,13 @@ public class Channel {
     private User creator;
 
     @OneToMany(mappedBy = "contextChannel")
-    private Set<Post> posts;
+    private List<Post> posts = new ArrayList<>();;
 
     @ManyToOne
     private Channel parentChannel;
 
     @OneToMany(mappedBy = "parentChannel")
-    private Set<Channel> subChannels;
+    private List<Channel> subChannels = new ArrayList<>();;
 
     public Channel(String name, String logo, String description, String address, String email, Boolean verified) {
         this.name = name;

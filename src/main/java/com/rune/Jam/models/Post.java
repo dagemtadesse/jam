@@ -1,11 +1,10 @@
 package com.rune.Jam.models;
 
+import java.util.ArrayList;
 import java.util.Date;
-import java.util.Set;
-
+import java.util.List;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
 
@@ -31,7 +30,7 @@ public class Post {
     private Channel contextChannel;
 
     @OneToMany(mappedBy = "post")
-    private Set<Comment> comments;
+    private List<Comment> comments = new ArrayList<>();;
 
     public Post(String text) {
         this.text = text;
