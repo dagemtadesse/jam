@@ -9,7 +9,7 @@ import java.util.Set;
 
 @Data
 @Entity
-@RequiredArgsConstructor
+@NoArgsConstructor
 public class Channel {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -33,4 +33,13 @@ public class Channel {
 
     @OneToMany(mappedBy = "parentChannel")
     private Set<Channel> subChannels;
+
+    public Channel(String name, String logo, String description, String address, String email, Boolean verified) {
+        this.name = name;
+        this.logo = logo;
+        this.description = description;
+        this.address = address;
+        this.email = email;
+        this.verified = verified;
+    }
 }

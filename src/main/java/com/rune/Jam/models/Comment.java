@@ -2,18 +2,20 @@ package com.rune.Jam.models;
 
 import java.sql.Date;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
 
 @Data
 @Entity
-@RequiredArgsConstructor
+@NoArgsConstructor
 public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long commentId;
-    
+
+    private String content;
     private Date date;
     private Integer upvoteCount;
     private Integer downvoteCount;
@@ -23,4 +25,10 @@ public class Comment {
 
     @OneToOne
     private User user;
+
+    public Comment(String content, Post post, User user) {
+        this.content = content;
+        this.post = post;
+        this.user = user;
+    }
 }

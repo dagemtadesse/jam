@@ -4,12 +4,13 @@ import java.util.Date;
 import java.util.Set;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
 
 @Entity
-@RequiredArgsConstructor
+@NoArgsConstructor
 @Data
 public class Post {
     @Id
@@ -31,4 +32,15 @@ public class Post {
 
     @OneToMany(mappedBy = "post")
     private Set<Comment> comments;
+
+    public Post(String text) {
+        this.text = text;
+        this.date = new Date();
+    }
+
+    public Post(String text, User creator, Channel contextChannel) {
+        this.text = text;
+        this.creator = creator;
+        this.contextChannel = contextChannel;
+    }
 }
