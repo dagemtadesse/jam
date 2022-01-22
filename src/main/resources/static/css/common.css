@@ -6,7 +6,7 @@ body {
 header {
     background-color: #0047ab;
     color: white;
-
+    margin-bottom: 3em;
 }
 
 a.btn {
@@ -39,6 +39,10 @@ a.footer-link {
     color: rgba(255, 255, 255, .5);
     max-width: fit-content;
     
+}
+
+a.current-page {
+    color: white;
 }
 
 a.footer-link:hover, a.footer-link:active {
