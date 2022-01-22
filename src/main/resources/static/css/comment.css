@@ -1,0 +1,48 @@
+footer {
+    position: relative;
+    padding: 0 6em;
+    margin-top: 2em;
+    padding: 0 2em;
+}
+
+div.footer-nav {
+    position: absolute;
+    bottom: 0;
+}
+
+div.main {
+    border: 1px solid black;
+    padding: 1.5em;
+    border-radius: 3em 0 0;
+}
+
+p.condensed {
+    max-width: 40em;
+}
+
+img.comment-side {
+    padding-right: 1em;
+    width: 6%;
+}
+
+div.rounded-border {
+    border: 1px solid black;
+    border-radius: .5em;
+    padding: 1em;
+    margin: 1em;
+}
+
+div.narrow {
+    max-width: fit-content;
+    border: 1px solid black;
+    padding: 1em;
+}
+
+div.posted-comment {
+    margin: 0 1em 0 3em;
+}
+
+a.post-btn{
+    padding-left: 1em;
+    align-self: center;
+}
