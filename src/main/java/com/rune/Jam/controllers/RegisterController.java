@@ -1,5 +1,6 @@
-package com.rune.Jam;
+package com.rune.Jam.controllers;
 
+import com.rune.Jam.models.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.ui.Model;

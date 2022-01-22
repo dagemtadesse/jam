@@ -1,4 +1,4 @@
-package com.rune.Jam;
+package com.rune.Jam.models;
 
 import lombok.Data;
 
