@@ -6,6 +6,9 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Data
 @Entity
@@ -15,11 +18,26 @@ public class Channel {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long channel_id;
 
+    @NotNull
+    @Size(min = 4, message = "channel name should be at least 4 characters long ")
     private String name;
+
     private String logo;
+
+    @NotNull
+    @Size(min = 4, message = "channel name should be at least 4 characters long ")
     private String description;
+   
+    @NotNull
+    @Pattern(regexp = "^([a-zA-Z\u0080-\u024F]+(?:. |-| |'))*[a-zA-Z\u0080-\u024F]*$", message = "enter a valid address")
     private String address;
+
+    @NotNull
+    @Pattern(regexp = "^(.+)@(.+)$", message = "should be in format example@domain.com")
     private String email;
+
+    @NotNull
+    @Size(min = 4, message = "Answer either true or false")
     private Boolean verified;
 
     @ManyToOne
