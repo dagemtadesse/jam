@@ -5,6 +5,12 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
@@ -18,17 +24,23 @@ public class User {
     private long id;
 
     @NotNull
-    @Size(message = "Enter a valid full name")
+    @NotBlank(message = "name is required")
+    @Size(min = 5 , message = "name must be at least 5 characters long")
     private String fullName;
 
-    @NotNull
+    @Email
+    @NotNull(message = "email is required")
+    @NotEmpty
     @Pattern(regexp = "^(.+)@(.+)$", message = "should be in format example@domain.com")
     private String email;
 
     @NotNull
     private String address;
 
+    @Min(8)
+    @Max(30)
     @NotNull
+    @NotBlank(message = "password is required")
     private String password;
 
     private String occupation;
@@ -48,6 +60,9 @@ public class User {
         this.address = address;
         this.password = password;
         this.userRole = Role.REGULAR;
+    }
+
+    public User(String string, String string2, String string3, String string4, String string5, Role regular) {
     }
 
     public static enum Role {
