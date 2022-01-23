@@ -37,8 +37,12 @@ xmlns:th="http://www.thymeleaf.org" lang="en">
             </div>
         </div>
 
-        <div class="container ps-5 pe-5">
-            <div class="row align-items-start">
+        <div class="container">
+            <ul>
+
+                <li th:each="w: ${naomi}" th:text="${w}"></liv>
+            </ul>
+            <div class="row align-items-start ps-5 pe-5">
               <div class="col narrow">
                 <p>department channel 2</p>
                 <p>department channel 2</p>
