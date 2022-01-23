@@ -59,4 +59,20 @@ public class Channel {
         this.email = email;
         this.verified = verified;
     }
+
+    @Override
+    public String toString() {
+        return "Channel{" +
+                "channel_id=" + channel_id +
+                ", name='" + name + '\'' +
+                ", logo='" + logo + '\'' +
+                ", description='" + description + '\'' +
+                ", address='" + address + '\'' +
+                ", email='" + email + '\'' +
+                ", verified=" + verified +
+                ", creator=" + creator +
+                ", posts=" + posts +
+                ", subChannels=" + subChannels +
+                '}';
+    }
 }

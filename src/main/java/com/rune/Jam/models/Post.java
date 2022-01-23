@@ -42,4 +42,19 @@ public class Post {
         this.creator = creator;
         this.contextChannel = contextChannel;
     }
+
+    @Override
+    public String toString() {
+        return "Post{" +
+                "id=" + id +
+                ", text='" + text + '\'' +
+                ", media='" + media + '\'' +
+                ", MIME='" + MIME + '\'' +
+                ", date=" + date +
+                ", upVoteCount=" + upVoteCount +
+                ", downVoteCount=" + downVoteCount +
+                ", creator=" + creator +
+                ", comments=" + comments +
+                '}';
+    }
 }
