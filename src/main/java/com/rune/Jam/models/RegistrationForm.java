@@ -19,6 +19,7 @@ public class RegistrationForm {
     
     @Email
     @NotNull
+    @NotBlank(message = "email is required")
     @Pattern(regexp = "^(.+)@(.+)$", message = "should be in format example@domain.com")
     private String email;
 
