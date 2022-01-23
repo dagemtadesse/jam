@@ -19,7 +19,7 @@ public class Channel {
     private long channel_id;
 
     @NotNull
-    @Size(min = 4, message = "channel name should be at least 4 characters long ")
+    @Size(min = 3, message = "channel name should be at least 4 characters long ")
     private String name;
 
     private String logo;
@@ -37,7 +37,6 @@ public class Channel {
     private String email;
 
     @NotNull
-    @Size(min = 4, message = "Answer either true or false")
     private Boolean verified;
 
     @ManyToOne
