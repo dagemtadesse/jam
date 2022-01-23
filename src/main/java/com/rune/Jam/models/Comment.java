@@ -17,7 +17,7 @@ public class Comment {
     private String content;
     private Date date;
     private Integer upvoteCount;
-    private Integer downvoteCount;
+    private Integer downVoteCount;
 
     @ManyToOne
     private Post post;
