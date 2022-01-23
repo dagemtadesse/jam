@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/editProfile.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>editProfile</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <p><span>J</span><span class="a">A</span><span>M</span> </p>
+            </div>
+            <div class="search-box">
+                <input placeholder="Search For a Company" class="search-input" type="text">
+                <ion-icon name="search-outline"></ion-icon>
+            </div>
+            <div class="bookmark">
+                <a href="#"><ion-icon name="bookmarks-outline"></ion-icon></a>
+                <a href="#"><p>Bookmark</p></a>
+            </div>
+            <div class="profile-img">
+                <!-- <img src="avatar.jpg" alt="profile-image"> -->
+                <ion-icon name="chevron-down-outline"></ion-icon>
+            </div>
+            
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <div class="navigation">
+                <div class="nav-container">
+                    <a href="profile.html">
+                        <div class="nav-content">
+                            <ion-icon name="person-outline"></ion-icon>
+                            <p>Profile Information</p>
+                        </div>
+                    </a>
+                    <a href="editProfile.html">
+                        <div class="nav-content">
+                            <ion-icon name="settings-outline"></ion-icon>
+                            <p>Edit Profile</p>
+                        </div>
+                    </a>
+                    <a href="addCompany.html">
+                        <div class="nav-content">
+                            <ion-icon name="bag-outline"></ion-icon>
+                            <p>Add a Company</p>
+                        </div>
+                    </a>
+                    <a href="editCompany.html">
+                        <div class="nav-content">
+                            <ion-icon name="information-circle-outline"></ion-icon>
+                            <p>Edit Company Settings</p>
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+
+
+            <div class="information">
+                <h1></h1>
+                <div class="info-container">
+                    <div class="prof-info">
+                        <p>Edit Profile</p>
+                    </div>
+                    <div class="info-box">
+                        <div class="info-content">
+                            <label for="fullnaem">Full Name</label>
+                            <input type="text" name="fullname" placeholder="enter your fullName">
+                        </div>
+                        <div class="info-content">
+                            <label for="user">Username Handle</label>
+                            <input type="text" name="user" placeholder="enter username handle">
+                        </div>
+                        <div class="info-content">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" placeholder="enter your email">
+                        </div>
+                        <div class="info-content">
+                            <label for="address">Address</label>
+                            <input type="text" name="address" placeholder="enter your address">
+                        </div>
+                        <a href="" class="save-btn">Save</a>
+                    </div>
+                    
+                    <div class="prof-info prof-info-1">
+                        <p>Change Password</p>
+                    </div>
+                    <div class="info-box info-box-1">
+                        <div class="info-content">
+                            <label for="old password">Old Password</label>
+                            <input type="text" name="old password" placeholder="enter old password">
+                        </div>
+                        <div class="info-content">
+                            <label for="new password">New Password</label>
+                            <input type="text" name="new password" placeholder="enter new password">
+                        </div>
+                        <div class="info-content">
+                            <label for="confirm">Confirm Password</label>
+                            <input type="email" name="confirm" placeholder="confirm your password">
+                        </div>
+                        <a href="" class="save-btn">Change</a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="foot-container">
+            <div class="bottom-text">
+                <a class="menu logo">
+                    <p><span>J</span><span class="a">A</span><span>M</span> </p>
+                </a>
+                <a href="" class="menu menu-1">Menu One</a>
+                <a href="" class="menu menu-1">Menu Two</a>
+                <a href="" class="menu menu-1">Menu Three</a>
+                <a href="" class="menu menu-1">Menu Four</a>
+            </div>
+            <div class="copyright">&copy; Newicon All Rights Reserved</div>
+        </div>
+    </footer>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
