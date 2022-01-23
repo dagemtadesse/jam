@@ -31,6 +31,10 @@
                         <div class="form-group">
                             <label for="address">Address</label>
                             <input type="text" class="form-control"  th:field="*{address}" required/>
+                            <div 
+                                th:if="${#fields.hasErrors('address')}" 
+                                th:errors="*{address}">
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="email">Email Address</label>
@@ -51,6 +55,10 @@
                         <div class="form-group">
                             <label for="cPassword">Confirm Password</label>
                             <input type="password" class="form-control"  th:field="*{cPassword}" required>
+                            <div 
+                                th:if="${#fields.hasErrors('cpassword')}" 
+                                th:errors="*{cpassword}">
+                            </div>
                         </div>
                         <div class="text-center p-2">
                             <input class="btn btn-primary rounded-pill " value="register" type="submit">
