@@ -66,13 +66,13 @@ a.post-btn{
 }
 
 header nav.navbar {
-    padding: 1em 5em;
+    padding: 1em 1.5em;
 }
 
 div.nav-header-items {
     display: flex;
     justify-content: space-around;
-    padding: 0 10em;
+    padding: 0 4em;
 }
 
 div.btn-group a {
@@ -98,6 +98,12 @@ div.nav-footer-items {
 
 footer nav.navbar {
     padding: 1em 1.5em;
+}
+
+/* MAIN */
+
+p.condensed {
+    max-width: 40em;
 }
 
 

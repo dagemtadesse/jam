@@ -6,10 +6,6 @@ div.main {
     border-radius: 3em 0 0;
 }
 
-p.condensed {
-    max-width: 40em;
-}
-
 img.comment-side {
     padding-right: 1em;
     width: 6%;
