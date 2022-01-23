@@ -26,6 +26,7 @@ footer {
 
 main {
     margin-bottom: 3em;
+    padding: 0 5em;
 }
 
 li.nav-item {
@@ -48,3 +49,47 @@ a.current-page {
 a.footer-link:hover, a.footer-link:active {
     color: white;
 }
+
+/* HEADER */
+
+a.post-btn{
+    padding-left: 1em;
+    align-self: center;
+}
+
+header nav.navbar {
+    padding: 1em 5em;
+}
+
+div.nav-header-items {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 10em;
+}
+
+div.btn-group a {
+    padding: .5em 3em;
+}
+
+a.left-btn {
+    margin-right: 5.5em;
+}
+
+a.right-btn {
+    margin-right: 3em;
+}
+
+
+/* FOOTER */
+
+div.nav-footer-items {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 0;
+}
+
+footer nav.navbar {
+    padding: 1em 1.5em;
+}
+
+

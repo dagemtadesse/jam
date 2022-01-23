@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,15 +13,14 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg border-bottom border-secondary">
-            <div class="container-fluid d-flex justify-content-around p-2">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid nav-header-items">
               <p class="navbar-brand fw-bold fs-4 m-0">JAM</p>
               <div class="btn-group">
-                <a href="#" class="btn ps-5 pe-5 me-5 my-hover">Register</a>
-                <a href="#" class="btn ps-5 pe-5 ms-5 my-hover">Login</a>
+                <a href="#" class="btn my-hover left-btn">Register</a>
+                <a href="#" class="btn my-hover right-btn">Login</a>
               </div>
             </div>
-            
         </nav>
     </header>
 
@@ -47,8 +47,8 @@
                 <p>department channel 2</p>
               </div>
               <div class="col">
-                <div class="input-group mb-3 rounded-border">
-                    <img src="../static/images/user.png" class="rounded mx-auto comment-side" alt="...">
+                <div class="rounded-border d-flex">
+                    <img src="../static/images/user.png" class="rounded comment-side m-0" alt="...">
                     <input type="text" class="form-control" placeholder="Post your experience or colmplaint at a company" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                 </div>
                 
@@ -65,9 +65,9 @@
                         <input type="text" class="form-control" placeholder="Write your comment here" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"> 
                         <a href="#" class="post-btn"><img src="../static/images/send.png" alt="" width="4%"></a>
                     </div>  
-                    <div class="date-time d-flex justify-content-end">
-                        <p class="ps-1 pe-1">Jan 12, 2022</p> 
-                        <p class="ps-1 pe-1">8:00 PM</p> 
+                    <div class="muted-text mt-2 d-flex justify-content-end">
+                        <p class="mb-0 me-2 card-text"><small class="text-muted">Posted: DD/MM/YY</small></p>
+                        <p class="card-text"><small class="text-muted">Time: hr:min</small></p>
                     </div>
                 </div>
 
@@ -78,9 +78,9 @@
                     </div>
                     <p class="condensed">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil, magni sit quae blanditiis odio veniam commodi totam culpa harum corporis eveniet consectetur. Quae cumque nulla pariatur ullam nemo. Provident, dicta.</p>
                 
-                    <div class="date-time d-flex justify-content-end">
-                        <p class="ps-1 pe-1">Jan 12, 2022</p> 
-                        <p class="ps-1 pe-1">8:00 PM</p> 
+                    <div class="muted-text mt-2 d-flex justify-content-end">
+                        <p class="mb-0 me-2 card-text"><small class="text-muted">Posted: DD/MM/YY</small></p>
+                        <p class="card-text"><small class="text-muted">Time: hr:min</small></p>
                     </div>
                 </div>
 
@@ -95,9 +95,9 @@
                         <input type="text" class="form-control" placeholder="Write your comment here" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                         <a href="#" class="post-btn"><img src="../static/images/send.png" alt="" width="4%"></a>
                     </div>  
-                    <div class="date-time d-flex justify-content-end">
-                        <p class="ps-1 pe-1">Jan 12, 2022</p> 
-                        <p class="ps-1 pe-1">8:00 PM</p> 
+                    <div class="muted-text mt-2 d-flex justify-content-end">
+                        <p class="mb-0 me-2 card-text"><small class="text-muted">Posted: DD/MM/YY</small></p>
+                        <p class="card-text"><small class="text-muted">Time: hr:min</small></p>
                     </div>
                 </div>
 
@@ -106,7 +106,7 @@
     </main>
     <footer>
         <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid d-flex p-2">
+            <div class="container-fluid  nav-footer-items">
               <p class="navbar-brand fw-bold fs-4 m-0 justify-self-flex-start ps-5">JAM</p>
               <ul class="nav">
                 <li class="nav-item">
@@ -119,7 +119,7 @@
                   <a class="footer-link current-page">Comments</a>
                 </li>
                 <li class="nav-item">
-                  <a class="footer-link  active" href="../templates/search.html">Search</a>
+                  <a class="footer-link" href="../templates/search.html">Search</a>
                 </li>
               </ul>
               <div>
