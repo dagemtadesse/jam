@@ -5,6 +5,9 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 @Data
 @Entity
@@ -14,10 +17,24 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    @NotNull
+    @Pattern(regexp = "^[a-zA-Z]{4,}(?: [a-zA-Z]+)?(?: [a-zA-Z]+)?$", message = "Enter a valid Fullname")
     private String fullName;
+
+    @NotNull
+    @Pattern(regexp = "^([a-zA-Z])+([\\w]{2,})+$", message = "Enter a valid username")
     private String userHandle;
+
+    @NotNull
+    @Pattern(regexp = "^(.+)@(.+)$", message = "should be in format example@domain.com")
     private String email;
+
+    @NotNull
+    @Pattern(regexp = "^(\\+\\d{1,3}( )?)?(\\d{3}[ ]?){2}\\d{3}$", message = "should be in format +251 9xx xxx xxx")
     private String phoneNumber;
+
+    @NotNull
+    @Size(min = 7, message = "choose either 'student' or 'employee'.")
     private String occupation;
 
     @Enumerated(EnumType.STRING)
