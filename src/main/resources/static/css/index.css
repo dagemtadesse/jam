@@ -1,0 +1,22 @@
+.login-form {
+    margin: 1em 0;
+}
+.login-form input {
+    margin-bottom: 1em;
+}
+
+a.login-btn {
+    padding: .5em 2em;
+    
+}
+
+div.row {
+    margin-bottom: 2.5em;
+}
+
+div.login-right {
+    background-color: #0275d8;
+    color: white;
+    text-align: center;
+    padding: 4em 3em;
+}
