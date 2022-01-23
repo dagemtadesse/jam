@@ -52,6 +52,14 @@ a.footer-link:hover, a.footer-link:active {
 
 /* HEADER */
 
+.header-btn {
+    background-color: hsl(215, 100%, 34%) !important;
+}
+
+.header-btn:focus, .header-btn:hover {
+    background-color: 	#0275d8 !important;
+}
+
 a.post-btn{
     padding-left: 1em;
     align-self: center;
