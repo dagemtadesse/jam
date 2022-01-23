@@ -1,16 +1,17 @@
 body {
-   display: flex;
-   flex-direction: column;
-   min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
+
 header {
-    background-color: #0047ab;
+    background-color: #1D1D29;
     color: white;
     margin-bottom: 3em;
 }
 
 a.btn {
-    border: 1px solid #007fff;
+    border: 1px solid #25314D;
     color: white;
     background-color: #1789fc;
 }
@@ -19,7 +20,7 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: #0047ab;
+    background-color: #1D1D29;
     color: white;
     margin-top: auto;
 }
@@ -39,40 +40,42 @@ a.footer-link {
     padding: 0 2em;
     color: rgba(255, 255, 255, .5);
     max-width: fit-content;
-    
 }
 
 a.current-page {
     color: white;
 }
 
-a.footer-link:hover, a.footer-link:active {
+a.footer-link:hover,
+a.footer-link:active {
     color: white;
 }
+
 
 /* HEADER */
 
 .header-btn {
-    background-color: hsl(215, 100%, 34%) !important;
+    background: #1E263D !important;
 }
 
-.header-btn:focus, .header-btn:hover {
-    background-color: 	#0275d8 !important;
+.header-btn:focus,
+.header-btn:hover {
+    background-color: #0275d8 !important;
 }
 
-a.post-btn{
+a.post-btn {
     padding-left: 1em;
     align-self: center;
 }
 
 header nav.navbar {
-    padding: 1em 1.5em;
+    padding: 1em 5em;
 }
 
 div.nav-header-items {
     display: flex;
     justify-content: space-around;
-    padding: 0 4em;
+    padding: 0 10em;
 }
 
 div.btn-group a {
@@ -100,10 +103,6 @@ footer nav.navbar {
     padding: 1em 1.5em;
 }
 
-/* MAIN */
-
-p.condensed {
-    max-width: 40em;
+.letter-A {
+    color: #2e8aba;
 }
-
-
