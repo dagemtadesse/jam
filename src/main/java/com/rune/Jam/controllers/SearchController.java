@@ -2,8 +2,10 @@ package com.rune.Jam.controllers;
 
 import com.rune.Jam.models.Channel;
 import com.rune.Jam.repositories.ChannelRepository;
+import com.rune.Jam.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,9 +20,12 @@ import java.util.List;
 public class SearchController {
 
     private final ChannelRepository channelRepository;
+    private final UserRepository userRepo;
 
     @GetMapping ("/search")
-    public String search(@RequestParam(required = false) String channelName, Model model){
+    public String search(@RequestParam(required = false) String channelName, Model model, Authentication authentication){
+        var email = authentication.getName();
+        var user = userRepo.findUserByEmail(email);
 
         log.info("incoming request" + channelName);
         var channels = new ArrayList<Channel>();
@@ -34,6 +39,7 @@ public class SearchController {
         }
 
         model.addAttribute("chans", channels);
+        model.addAttribute("user", user);
         model.addAttribute("matchResult", channels.size());
         return "final/search";
     }

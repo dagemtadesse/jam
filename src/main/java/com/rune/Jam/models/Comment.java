@@ -30,4 +30,16 @@ public class Comment {
         this.post = post;
         this.user = user;
     }
+
+    @Override
+    public String toString() {
+        return "Comment{" +
+                "commentId=" + commentId +
+                ", content='" + content + '\'' +
+                ", date=" + date +
+                ", upvoteCount=" + upvoteCount +
+                ", downVoteCount=" + downVoteCount +
+                ", user=" + user +
+                '}';
+    }
 }

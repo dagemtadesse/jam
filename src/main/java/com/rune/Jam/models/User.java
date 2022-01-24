@@ -67,7 +67,8 @@ public class User implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Arrays.asList(new SimpleGrantedAuthority(this.getUserRole().name()));
+        System.out.println("Role-XXX" + this.getUserRole().name());
+        return Arrays.asList(new SimpleGrantedAuthority("ROLE_"+this.getUserRole().name()));
     }
 
     @Override

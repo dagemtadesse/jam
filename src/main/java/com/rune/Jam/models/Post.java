@@ -53,7 +53,7 @@ public class Post {
                 ", date=" + date +
                 ", upVoteCount=" + upVoteCount +
                 ", downVoteCount=" + downVoteCount +
-                ", creator=" + creator +
+                ", creator=" + creator.getId() +
                 ", comments=" + comments +
                 '}';
     }

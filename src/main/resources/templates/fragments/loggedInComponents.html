@@ -4,7 +4,9 @@
 
 
 <header th:fragment="headerWithBookMark">
+
     <nav class="navbar navbar-expand-lg">
+
       <div class="container-fluid nav-footer-items">
         <p class="navbar-brand fw-bold fs-4 m-0">JAM</p>
         <form class="d-flex" method="get" th:action="@{/search}">
@@ -13,20 +15,32 @@
             <img th:src="@{/images/magnifier.svg}">
           </button>
         </form>
+
         <div class="btn-group">
-          <button type="button" class="btn me-2">
-            <img th:src="@{/images/new_bookmark.svg}" /> BookMark
-          </button>
-  
+            <form method="post" th:action="@{/bookmark/__${currentChan.channel_id}__}">
+                <button type="submit" class="btn me-2">
+                    <img th:src="@{/images/new_bookmark.svg}" /> BookMark
+                </button>
+            </form>
+
           <div class="dropdown">
             <button class="btn dropdown-toggle bookmark-btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
               <img th:src="@{/images/user.png}" class="rounded-start small_avatar " alt="...">
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><a class="dropdown-item" href="#">profile</a></li>
-              <li><a class="dropdown-item" href="#">logout</a></li>
+                <li><a class="dropdown-item" th:href="@{/profile}">profile</a></li>
+                <li><a class="dropdown-item" th:href="@{/logout}">logout</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+
+              <li th:each="booksMarks: ${user.bookmarks}">
+                  <a class="dropdown-item"
+                     th:href="@{/channel/__${booksMarks.channel_id}__}"
+                     th:text="${booksMarks.name}"
+                  >
+                      Something else here
+                  </a>
+              </li>
+
             </ul>
           </div>
   
@@ -37,9 +51,10 @@
 
 <header th:fragment="headerWithOutBookMark">
     <nav class="navbar navbar-expand-lg">
+
         <div class="container-fluid nav-footer-items">
             <p class="navbar-brand fw-bold fs-4 m-0">JAM</p>
-            <form class="d-flex" method="get" >
+            <form class="d-flex" method="get" th:action="@{/search}">
                 <input class="form-control me-2" type="search" name="channelName" placeholder="Search a company" aria-label="Search">
                 <button class="btn border border-primary text-dark search-btn" type="submit">
                     <img th:src="@{/images/magnifier.svg}">
@@ -47,16 +62,24 @@
             </form>
 
             <div class="btn-group">
-
                 <div class="dropdown">
                     <button class="btn dropdown-toggle bookmark-btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                         <img th:src="@{/images/user.png}" class="rounded-start small_avatar " alt="...">
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="#">profile</a></li>
-                        <li><a class="dropdown-item" href="#">logout</a></li>
+                        <li><a class="dropdown-item" th:href="@{/profile}">profile</a></li>
+                        <li><a class="dropdown-item" th:href="@{/logout}">logout</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+
+                        <li th:each="booksMarks: ${user.bookmarks}">
+                            <a class="dropdown-item"
+                               th:href="@{/channel/__${booksMarks.channel_id}__}"
+                               th:text="${booksMarks.name}"
+                            >
+                                Something else here
+                            </a>
+                        </li>
+
                     </ul>
                 </div>
 
@@ -65,14 +88,6 @@
     </nav>
 </header>
 
-
-
-<nav th:fragment="menu">
-        <a th:href="@{/}">Homepage</a>
-        <a th:href="@{/about}">About Me</a>
-        <a th:href="@{/blog}">Blog</a>
-        <a th:href="@{/contact}">Contact</a>
-    </nav>
 
 <footer th:fragment="footer">
     <nav class="navbar navbar-expand-lg">

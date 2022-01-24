@@ -35,9 +35,9 @@ public class SecurityConfig {
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
         return http
                 .authorizeRequests()
-                .antMatchers("/channel/3").hasRole("REGULAR")
-//                .antMatchers("/channel/2").hasRole("ADMIN")
-                .antMatchers("/", "/**").permitAll()
+                .antMatchers("/channel/**", "/search", "/create-post/**")
+                .access("hasRole('REGULAR') || hasRole('ADMIN')")
+                .antMatchers("/", "/**").access("permitAll")
                 .and()
                 .formLogin()
                 .loginPage("/login")

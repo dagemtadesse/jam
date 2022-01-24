@@ -22,7 +22,7 @@
 
 <body>
 
-    <div th:insert="./fragments/loggedInComponents :: headerWithBookMark"></div>
+    <div th:replace="./fragments/loggedInComponents :: headerWithBookMark"></div>
 
     <main>
 
@@ -33,7 +33,8 @@
                     <p class="h1 mt-3" th:text="${currentChan.name}"></p>
                     <p class="condensed" th:text="${currentChan.description}">Lorem ipsum dolor sit amet consectetur
                         adipisicing elit. Nemo quo laudantium ea possimus necessitatibus hic veritatis ab obcaecati vero
-                        odio.</p>
+                        odio.
+                    </p>
                 </div>
             </div>
         </div>
@@ -48,8 +49,8 @@
                     <div class="rounded-border d-flex align-items-center">
                         <img th:src="@{/images/user.png}" class="rounded comment-side m-0" alt="...">
 
-                        <form th:action="@{/1/create-post/__${currentChan.channel_id}__}" th:object="${newPost}"
-                            method="post" id="create_post" class="d-flex justify-content-between flex-grow-1 row">
+                        <form th:action="@{/create-post/__${currentChan.channel_id}__}" th:object="${newPost}"
+                            method="post"  class="d-flex justify-content-between flex-grow-1 row" target="_blank">
 
                             <div class="col-11">
                                 <input type="text" th:field="*{text}" class="form-control"
@@ -57,7 +58,7 @@
                                     aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                             </div>
                             <div class="col-1">
-                                <button type="submit" form="create_post"
+                                <button type="submit"
                                     class="post-btn btn align-middle send-post rounded-circle">
                                     <img th:src="@{/images/send.svg}" alt="">
                                 </button>
@@ -79,18 +80,17 @@
                             </div>
                             <p class="condensed mt-3 fs-6" th:text="${post.text}"></p>
 
-                            <form th:action="@{/1/create-post/__${currentChan.channel_id}__}"
-                                  th:object="${newPost}"
-                                method="post" id="create_post"
+                            <form th:action="@{/create-comment/__${post.id}__}"
+                                method="post" target="_blank"
                                 class="d-flex justify-content-between flex-grow-1 row border-top pt-3">
 
                                 <div class="col-11">
                                     <input type="text" class="form-control"
-                                        placeholder="Post your experience or colmplaint at a company"
+                                        placeholder="comment this post" name="content"
                                         aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                                 </div>
                                 <div class="col-1">
-                                    <button type="submit" form="create_post"
+                                    <button type="submit"
                                         class="post-btn btn align-middle send-post rounded-circle">
                                         <img th:src="@{/images/send.svg}" alt="">
                                     </button>
@@ -98,10 +98,22 @@
                             </form>
 
                         </div>
+
+                        <div class="rounded-border col"th:each="comment : ${post.comments}">
+                            <div class="d-flex user-handle align-items-center">
+                                <img th:src="@{/images/user.png}" class="rounded comment-side" alt="...">
+                                <p th:text="${comment.user.fullName}" class="mb-0 f2-6"></p>
+
+                                <p class="card-text ms-auto">
+                                    <small class="text-muted me-2">DD/MM/YY</small>
+                                    <small class="text-muted">hr:min</small>
+                                </p>
+                            </div>
+                            <p class="condensed mt-3 fs-6" th:text="${comment.content}"></p>
+                        </div>
+
+
                     </div>
-
-
-
 
                 </div>
             </div>
@@ -109,11 +121,7 @@
 
     </main>
 
-
     <div th:insert="/fragments/components :: footer"></div>
-
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
