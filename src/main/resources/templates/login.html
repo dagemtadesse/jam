@@ -12,17 +12,7 @@
 </head>
 <body>
 
-  <header>
-    <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid nav-header-items">
-          <p class="navbar-brand fw-bold fs-4 m-0">JAM</p>
-          <div class="btn-group">
-            <a th:href="@{/register}" class="btn btn-primary left-btn header-btn">Register</a>
-            <a href="#login_widget" class="btn btn-primary right-btn header-btn">Login</a>
-          </div>
-        </div>
-    </nav>
-  </header>
+    <div th:insert="/fragments/components :: header"></div>
 
     <main>
 
@@ -40,8 +30,8 @@
 
         <div class="row container">
             <div class="col">
-                <h1 id="#login_widget">Login</h1>
-                <form class="login-form" method="post" th:action="@{/login}">
+                <h1>Login</h1>
+                <form class="login-form" method="post" th:action="@{/login}" >
                     <label for="loginEmailInput" class="form-label">Email address</label>
                     <input type="email" class="form-control"  name="username" id="loginEmailInput" placeholder="email@adress.com">
 
@@ -51,9 +41,12 @@
                     <button type="submit" class="btn btn-primary">Sign in</button>
                 </form>
 
-                <div class="last-action">
+                <div class="last-action" id="#login_widget">
                     
-                    <p class="center">Don't have an account yet?<a th:href="@{/register}"/>Create one.</a> </p>
+                    <p class="center">
+                        Don't have an account yet?
+                        <a th:href="@{/register}"/>Create one.</a>
+                    </p>
                 </div>
             </div>
 
@@ -65,32 +58,7 @@
 
     </main>
 
-    <footer>
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid  nav-footer-items">
-              <p class="navbar-brand fw-bold fs-4 m-0 justify-self-flex-start ps-5">JAM</p>
-              <ul class="nav">
-                <li class="nav-item">
-                  <a class="footer-link  current-page">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="footer-link" href="../templates/registration.html">Register</a>
-                </li>
-                <li class="nav-item">
-                  <a class="footer-link"  href="../templates/comment.html">Comments</a>
-                </li>
-                <li class="nav-item">
-                  <a class="footer-link" href="../templates/search.html">Search</a>
-                </li>
-              </ul>
-              <div>
-                <p class="copyright justify-self-flex-end align-self-center m-0 pe-5">&copy2022 JAM All rights reserved</p>
-              </div>
-            </div>
-
-        </nav>
-                
-    </footer>
+    <div th:insert="./fragments/components :: footer"></div>
     
 </body>
 </html>

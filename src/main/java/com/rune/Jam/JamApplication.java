@@ -24,10 +24,10 @@ public class JamApplication{
 	@Bean
 	public CommandLineRunner dataLoader(UserRepository userRepository, ChannelRepository channelRepository, PostRepository postRepository) {
 		return args -> {
-//			var AAU = new Channel("AAU", null, "Addis Ababa University", "AA", "aau@aau.edu.et", true);
-//			var BDU = new Channel("BDU", null, "Bahir Dar University", "BD", "bdu@bdu.edu.et", false);
-//			var AAiT = new Channel("AAiT", null, "Addis Ababa Institute of Technology", "AA", "aau@aau.edu.et", true);
-////
+			var AAU = new Channel("AAU", null, "Addis Ababa University", "AA", "aau@aau.edu.et", true);
+			var BDU = new Channel("BDU", null, "Bahir Dar University", "BD", "bdu@bdu.edu.et", false);
+			var AAiT = new Channel("AAiT", null, "Addis Ababa Institute of Technology", "AA", "aau@aau.edu.et", true);
+//
 //			AAiT.setParentChannel(AAU);
 
 //			var dagem = new RegistrationForm("Dagem Tadesse", "dagem@gmail.com", "dagem@gmail.com", "students");
@@ -49,7 +49,7 @@ public class JamApplication{
 //			var third = new Post("new Event in AAit", dagem, AAiT);
 ////
 //			userRepository.saveAll(Arrays.asList(dagem));
-//			channelRepository.saveAll(Arrays.asList(AAU, AAiT, BDU));
+			channelRepository.saveAll(Arrays.asList(AAU, AAiT, BDU));
 //			postRepository.saveAll(Arrays.asList(first, second, third));
 //		commentRepository.saveAll(Arrays.asList(firstComment, secondComment, thirdComment));
 //

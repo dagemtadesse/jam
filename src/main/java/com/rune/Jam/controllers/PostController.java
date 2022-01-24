@@ -34,6 +34,6 @@ public class PostController {
             postRepo.save(newPost);
         }
 
-        return "channel";
+        return "final/channel";
     }
 }

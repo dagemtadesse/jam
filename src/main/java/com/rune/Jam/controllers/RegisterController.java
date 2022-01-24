@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.ui.Model;
@@ -23,16 +24,15 @@ public class RegisterController{
     private final PasswordEncoder passwordEncoder;
 
     @GetMapping ("/register")
-    public String showRegistrationForm(Model model) {
-        model.addAttribute("newUser", new RegistrationForm());
+    public String showRegistrationForm(RegistrationForm registrationForm) {
         return "final/registration";
     }
 
     @PostMapping("/register")
-    public String createNewUser(@Valid RegistrationForm newUser, Errors errors){
+    public String createNewUser(@Valid RegistrationForm newUser, BindingResult bindingResult){
         log.info("processing new User" + newUser);
-        if (errors.hasErrors()){
-            log.info("validation errors: " + errors);
+        if (bindingResult.hasErrors()){
+            log.info("validation errors: " + bindingResult);
             return "final/registration";
         }
 

@@ -34,11 +34,7 @@ public class CommentController {
             model.addAttribute("newPost", new Post());
         }
 
-        return "channel";
+        return "final/channel";
     }
 
-    @GetMapping("/prototype")
-    public String showPrototype(){
-        return "comment";
-    }
 }

@@ -11,32 +11,49 @@
 </head>
 <body>
 
-    <header>
-      <nav class="navbar navbar-expand-lg">
-          <div class="container-fluid nav-header-items">
-            <p class="navbar-brand fw-bold fs-4 m-0">JAM</p>
-            <div class="btn-group">
-              <a href="../templates/registration.html" class="btn btn-primary left-btn header-btn">Register</a>
-              <a href="../templates/index.html" class="btn btn-primary right-btn header-btn">Login</a>
-            </div>
-          </div>
-      </nav>
-    </header>
+<header th:fragment="header">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid nav-footer-items">
+      <p class="navbar-brand fw-bold fs-4 m-0">JAM</p>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search a company" aria-label="Search">
+        <button class="btn border border-primary text-dark search-btn" type="submit">
+          <img src="../static/images/magnifier.svg">
+        </button>
+      </form>
+      <div class="btn-group">
+        <button type="button" class="btn me-2">
+          <img src="../static/images/new_bookmark.svg" /> BookMark
+        </button>
+
+        <div class="dropdown">
+          <button class="btn dropdown-toggle bookmark-btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="../static/images/user.png" class="rounded-start small_avatar " alt="...">
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="#">profile</a></li>
+            <li><a class="dropdown-item" href="#">logout</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+</header>
 
     <main>
 
       <div class="container search-bar">
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search a company" aria-label="Search">
-          <button class="btn border border-primary text-dark search-btn" type="submit">Search</button>
-        </form>
+
       </div>
 
       <div class="search-result mt-5 ms-5 me-5 d-flex justify-content-evenly">
         <div class="col card mb-3" style="max-width: 540px;">
           <div class="row g-0">
             <div class="col-md-4">
-              <img src="../static/images/user.png" class="img-fluid rounded-start p-3" alt="...">
+              <img src="../static/images/user.png" class="img-fluid rounded-start p-3" alt="..." width="24px">
             </div>
             <div class="col-md-8">
               <div class="card-body">

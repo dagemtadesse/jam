@@ -41,7 +41,7 @@ public class SecurityConfig {
                 .and()
                 .formLogin()
                 .loginPage("/login")
-                .defaultSuccessUrl("/channel/2")
+                .defaultSuccessUrl("/search")
                 .and()
                 .logout()
                 .logoutSuccessUrl("/login")
