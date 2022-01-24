@@ -34,7 +34,7 @@
             </div>
 
             <div class="col">
-                <img src="@{/images/homepage-img.svg}" alt="">
+                <img th:src="@{/images/homepage-img.svg}" alt="">
             </div>
         </div>
 
@@ -53,7 +53,7 @@
 
                 <div class="last-action">
                     
-                    <p class="center">Don't have an account yet? Create one.</p>
+                    <p class="center">Don't have an account yet?<a th:href="@{/register}"/>Create one.</a> </p>
                 </div>
             </div>
 

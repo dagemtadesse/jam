@@ -43,6 +43,9 @@ public class SecurityConfig {
                 .loginPage("/login")
                 .defaultSuccessUrl("/channel/2")
                 .and()
+                .logout()
+                .logoutSuccessUrl("/login")
+                .and()
                 .build();
     }
 
