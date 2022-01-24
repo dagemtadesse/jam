@@ -5,6 +5,8 @@ import lombok.Data;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 
 @Data
 public class RegistrationForm {
@@ -15,8 +17,10 @@ public class RegistrationForm {
     @NotNull
     @Size(min = 3, message = "field must be at least 5 characters long.")
     private String address;
-
+    
+    @Email
     @NotNull
+    @NotBlank(message = "email is required")
     @Pattern(regexp = "^(.+)@(.+)$", message = "should be in format example@domain.com")
     private String email;
 

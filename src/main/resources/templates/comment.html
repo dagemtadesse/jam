@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,18 +11,20 @@ xmlns:th="http://www.thymeleaf.org" lang="en">
     <link rel="stylesheet" href="@{css/comment.css}">
     <link rel="stylesheet" href="@{css/common.css}">
 </head>
+
 <body>
     <header>
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid nav-header-items">
-              <p class="navbar-brand fw-bold fs-4 m-0">JAM</p>
-              <div class="btn-group">
-                <a href="#" class="btn btn-primary left-btn header-btn">Register</a>
-                <a href="../templates/index.html" class="btn btn-primary right-btn header-btn">Login</a>
-              </div>
+                <p class="navbar-brand fw-bold fs-4 m-0">
+                    J<span class="letter-A">A</span>M</p>
+                <div class="btn-group">
+                    <a href="#" class="btn btn-primary left-btn header-btn">Register</a>
+                    <a href="../templates/index.html" class="btn btn-primary right-btn header-btn">Login</a>
+                </div>
             </div>
         </nav>
-      </header>
+    </header>
 
     <main>
 
@@ -38,6 +40,7 @@ xmlns:th="http://www.thymeleaf.org" lang="en">
 
         <div class="container ps-5 pe-5">
             <div class="row align-items-start">
+<<<<<<< HEAD
               <div class="col narrow">
                 <p>department channel 2</p>
                 <p>department channel 2</p>
@@ -50,40 +53,55 @@ xmlns:th="http://www.thymeleaf.org" lang="en">
                 <div class="rounded-border d-flex">
                     <img src="@{/images/user.png}" class="rounded comment-side m-0" alt="...">
                     <input type="text" class="form-control" placeholder="Post your experience or colmplaint at a company" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+=======
+                <div class="col narrow">
+                    <p>department channel 2</p>
+                    <p>department channel 2</p>
+                    <p>department channel 2</p>
+                    <p>department channel 2</p>
+                    <p>department channel 2</p>
+                    <p>department channel 2</p>
+>>>>>>> 519b5e245e010c3e9e2e87cfd40cbd3c7d1b4348
                 </div>
-                
-
-                <div class="col rounded-border">
-                    <div class="d-flex user-handle">
-                        <img src="../static/images/user.png" class="rounded comment-side" alt="...">
-                        <p>John Doe</p>
-                    </div>  
-                    <p class="condensed">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil, magni sit quae blanditiis odio veniam commodi totam culpa harum corporis eveniet consectetur. Quae cumque nulla pariatur ullam nemo. Provident, dicta.</p>
-                    
-                    <div class="input-group mb-3 comment">
-                        
-                        <input type="text" class="form-control" placeholder="Write your comment here" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"> 
-                        <a href="#" class="post-btn"><img src="../static/images/send.png" alt="" width="4%"></a>
-                    </div>  
-                    <div class="muted-text mt-2 d-flex justify-content-end">
-                        <p class="mb-0 me-2 card-text"><small class="text-muted">Posted: DD/MM/YY</small></p>
-                        <p class="card-text"><small class="text-muted">Time: hr:min</small></p>
+                <div class="col">
+                    <div class="rounded-border d-flex">
+                        <img src="../static/images/user.png" class="rounded comment-side m-0" alt="...">
+                        <input type="text" class="form-control" placeholder="Post your experience or colmplaint at a company" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                     </div>
-                </div>
 
-                <div class="col rounded-border posted-comment">
-                    <div class="d-flex user-handle">
-                        <img src="../static/images/user.png" class="rounded comment-side" alt="...">
-                        <p>John Doe</p>
-                    </div>
-                    <p class="condensed">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil, magni sit quae blanditiis odio veniam commodi totam culpa harum corporis eveniet consectetur. Quae cumque nulla pariatur ullam nemo. Provident, dicta.</p>
-                
-                    <div class="muted-text mt-2 d-flex justify-content-end">
-                        <p class="mb-0 me-2 card-text"><small class="text-muted">Posted: DD/MM/YY</small></p>
-                        <p class="card-text"><small class="text-muted">Time: hr:min</small></p>
-                    </div>
-                </div>
 
+                    <div class="col rounded-border">
+                        <div class="d-flex user-handle">
+                            <img src="../static/images/user.png" class="rounded comment-side" alt="...">
+                            <p>John Doe</p>
+                        </div>
+                        <p class="condensed">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil, magni sit quae blanditiis odio veniam commodi totam culpa harum corporis eveniet consectetur. Quae cumque nulla pariatur ullam nemo. Provident, dicta.</p>
+
+                        <div class="input-group mb-3 comment">
+
+                            <input type="text" class="form-control" placeholder="Write your comment here" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            <a href="#" class="post-btn"><img src="../static/images/send.png" alt="" width="4%"></a>
+                        </div>
+                        <div class="muted-text mt-2 d-flex justify-content-end">
+                            <p class="mb-0 me-2 card-text"><small class="text-muted">Posted: DD/MM/YY</small></p>
+                            <p class="card-text"><small class="text-muted">Time: hr:min</small></p>
+                        </div>
+                    </div>
+
+                    <div class="col rounded-border posted-comment">
+                        <div class="d-flex user-handle">
+                            <img src="../static/images/user.png" class="rounded comment-side" alt="...">
+                            <p>John Doe</p>
+                        </div>
+                        <p class="condensed">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil, magni sit quae blanditiis odio veniam commodi totam culpa harum corporis eveniet consectetur. Quae cumque nulla pariatur ullam nemo. Provident, dicta.</p>
+
+                        <div class="muted-text mt-2 d-flex justify-content-end">
+                            <p class="mb-0 me-2 card-text"><small class="text-muted">Posted: DD/MM/YY</small></p>
+                            <p class="card-text"><small class="text-muted">Time: hr:min</small></p>
+                        </div>
+                    </div>
+
+<<<<<<< HEAD
                 <div class="col rounded-border">
                     <div class="d-flex user-handle">
                         <img src="@{images/user.png}" class="rounded comment-side" alt="...">
@@ -98,43 +116,60 @@ xmlns:th="http://www.thymeleaf.org" lang="en">
                     <div class="muted-text mt-2 d-flex justify-content-end">
                         <p class="mb-0 me-2 card-text"><small class="text-muted">Posted: DD/MM/YY</small></p>
                         <p class="card-text"><small class="text-muted">Time: hr:min</small></p>
-                    </div>
-                </div>
+=======
+                    <div class="col rounded-border">
+                        <div class="d-flex user-handle">
+                            <img src="../static/images/user.png" class="rounded comment-side" alt="...">
+                            <p>John Doe</p>
+                        </div>
+                        <p class="condensed">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil, magni sit quae blanditiis odio veniam commodi totam culpa harum corporis eveniet consectetur. Quae cumque nulla pariatur ullam nemo. Provident, dicta.</p>
 
-            </div>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Write your comment here" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            <a href="#" class="post-btn"><img src="../static/images/send.png" alt="" width="4%"></a>
+                        </div>
+                        <div class="muted-text mt-2 d-flex justify-content-end">
+                            <p class="mb-0 me-2 card-text"><small class="text-muted">Posted: DD/MM/YY</small></p>
+                            <p class="card-text"><small class="text-muted">Time: hr:min</small></p>
+                        </div>
+>>>>>>> 519b5e245e010c3e9e2e87cfd40cbd3c7d1b4348
+                    </div>
+
+                </div>
 
     </main>
     <footer>
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid  nav-footer-items">
-              <p class="navbar-brand fw-bold fs-4 m-0 justify-self-flex-start ps-5">JAM</p>
-              <ul class="nav">
-                <li class="nav-item">
-                  <a class="footer-link" href="../templates/index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="footer-link" href="../templates/registration.html">Register</a>
-                </li>
-                <li class="nav-item">
-                  <a class="footer-link current-page">Comments</a>
-                </li>
-                <li class="nav-item">
-                  <a class="footer-link" href="../templates/search.html">Search</a>
-                </li>
-              </ul>
-              <div>
-                <p class="copyright justify-self-flex-end align-self-center m-0 pe-5">&copy2022 JAM All rights reserved</p>
-              </div>
+                <p class="navbar-brand fw-bold fs-4 m-0 justify-self-flex-start ps-5">
+                    J<span class="letter-A">A</span>M</p>
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="footer-link" href="../templates/index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="footer-link" href="../templates/registration.html">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="footer-link current-page">Comments</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="footer-link" href="../templates/search.html">Search</a>
+                    </li>
+                </ul>
+                <div>
+                    <p class="copyright justify-self-flex-end align-self-center m-0 pe-5">&copy2022 JAM All rights reserved</p>
+                </div>
             </div>
 
         </nav>
-                
+
     </footer>
-   
-    
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
+
 </html>
