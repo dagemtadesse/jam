@@ -1,6 +1,8 @@
 package com.rune.Jam.controllers;
 
+import com.rune.Jam.models.Post;
 import com.rune.Jam.repositories.ChannelRepository;
+import com.rune.Jam.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -12,7 +14,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 @Slf4j
 @RequiredArgsConstructor
 public class CommentController {
+
     private final ChannelRepository channelRepo;
+    private final UserRepository userRepo;
 
     @GetMapping("/channel/{channelId}")
     public String comment(@PathVariable Long channelId, Model model){
@@ -27,6 +31,7 @@ public class CommentController {
             model.addAttribute("currentChan", channel);
             model.addAttribute("subChans", subChannels);
             model.addAttribute("posts", posts);
+            model.addAttribute("newPost", new Post());
         }
 
         return "channel";

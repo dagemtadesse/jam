@@ -8,29 +8,54 @@ xmlns:th="http://www.thymeleaf.org" lang="en">
     <title>Comment</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="../static/css/comment.css">
-    <link rel="stylesheet" href="../static/css/common.css">
+    <link rel="stylesheet" th:href="@{/css/comment.css}">
+    <link rel="stylesheet" th:href="@{/css/common.css}"/>
+    <link rel="stylesheet" th:href="@{/css/light.css}"/>
+
+    <style th:inline="text">
+    .main.col{
+        background: url([[@{/images/wave.svg}]]) no-repeat top center;
+    }
+</style>
+
 </head>
 <body>
+
     <header>
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid nav-header-items">
-              <p class="navbar-brand fw-bold fs-4 m-0">JAM</p>
-              <div class="btn-group">
-                <a href="#" class="btn my-hover left-btn">Register</a>
-                <a href="#" class="btn my-hover right-btn">Login</a>
-              </div>
+
+        <div class="nav container justify-content-between align-items-center p-2">
+            <div class="logo fs-3">
+                <p><span>J</span><span class="a">A</span><span>M</span> </p>
             </div>
-        </nav>
+            <div class="search-box col-5 d-flex">
+                <input placeholder="Search For a Company" class="form-control flex-grow-1"  type="text">
+                <input type="submit" value="Search" class="bttn">
+            </div>
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Active</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Dropdown</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
     </header>
 
     <main>
 
         <div class="container">
             <div class="row p-5">
-                <div class="col main" th:object="${currentChan}">
-                    <img src="../static/images/user.png" class="rounded mx-auto" alt="..." width="10%">
-                    <p class="h1" th:text="${currentChan.name}"></p>
+                <div class="col main" th:object="${currentChan}" >
+                    <img th:src="@{/images/user.png}" class="rounded mx-auto" alt="..." width="10%">
+                    <p class="h1 mt-3" th:text="${currentChan.name}"></p>
                     <p class="condensed" th:text="${currentChan.description}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo quo laudantium ea possimus necessitatibus hic veritatis ab obcaecati vero odio.</p>
                 </div>
             </div>
@@ -38,32 +63,59 @@ xmlns:th="http://www.thymeleaf.org" lang="en">
 
         <div class="container ps-5 pe-5">
             <div class="row align-items-start">
-              <div class="col narrow" th:each="chan : ${subChans}">
-                <p th:text="${chan.name}">department channel 2</p>
+              <div class="col-3" th:each="chan : ${subChans}">
+                <p ><a th:href="@{'/channel/' +${chan.channel_id}}" th:text="${chan.name}"></a></p>
               </div>
+
               <div class="col" >
-                <div class="rounded-border d-flex">
-                    <img src="../static/images/user.png" class="rounded comment-side m-0" alt="...">
-                    <input type="text" class="form-control" placeholder="Post your experience or colmplaint at a company" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                <div class="rounded-border d-flex align-items-center" >
+                    <img th:src="@{/images/user.png}" class="rounded comment-side m-0" alt="...">
+
+                    <form th:action="@{/1/create-post/__${currentChan.channel_id}__}"
+                          th:object="${newPost}" method="post" id="create_post"
+                          class="d-flex justify-content-between flex-grow-1 row">
+
+                            <div class="col-11">
+                                <input type="text" th:field="*{text}" class="form-control" placeholder="Post your experience or colmplaint at a company" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            </div>
+                            <div class="col-1">
+                                <button type="submit"  form="create_post"
+                                        class="post-btn btn align-middle send-post rounded-circle">
+                                     <img th:src="@{/images/send.svg}" alt="" >
+                                 </button>
+                            </div>
+                    </form>
+
                 </div>
                 
                 <div class="posts" th:each="post: ${posts}">
                     <div class="col rounded-border">
-                        <div class="d-flex user-handle">
-                            <img src="../static/images/user.png" class="rounded comment-side" alt="...">
-                            <p>John Doe</p>
-                        </div>
-                        <p class="condensed">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil, magni sit quae blanditiis odio veniam commodi totam culpa harum corporis eveniet consectetur. Quae cumque nulla pariatur ullam nemo. Provident, dicta.</p>
+                        <div class="d-flex user-handle align-items-center">
+                            <img th:src="@{/images/user.png}" class="rounded comment-side" alt="...">
+                            <p th:text="${post.creator.fullName}" class="mb-0 f2-6"></p>
 
-                        <div class="input-group mb-3 comment">
+                            <p class="card-text ms-auto">
+                                <small class="text-muted me-2">DD/MM/YY</small>
+                                <small class="text-muted">hr:min</small>
+                            </p>
+                        </div>
+                        <p class="condensed mt-3 fs-6" th:text="${post.text}"></p>
 
-                            <input type="text" class="form-control" placeholder="Write your comment here" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                            <a href="#" class="post-btn"><img src="../static/images/send.png" alt="" width="4%"></a>
-                        </div>
-                        <div class="muted-text mt-2 d-flex justify-content-end">
-                            <p class="mb-0 me-2 card-text"><small class="text-muted">Posted: DD/MM/YY</small></p>
-                            <p class="card-text"><small class="text-muted">Time: hr:min</small></p>
-                        </div>
+                        <form th:action="@{/1/create-post/__${currentChan.channel_id}__}"
+                              th:object="${newPost}" method="post" id="create_post"
+                              class="d-flex justify-content-between flex-grow-1 row border-top pt-3">
+
+                            <div class="col-11">
+                                <input type="text"  class="form-control" placeholder="Post your experience or colmplaint at a company" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            </div>
+                            <div class="col-1">
+                                <button type="submit"  form="create_post"
+                                        class="post-btn btn align-middle send-post rounded-circle">
+                                    <img th:src="@{/images/send.svg}" alt="" >
+                                </button>
+                            </div>
+                        </form>
+
                     </div>
                 </div>
 
