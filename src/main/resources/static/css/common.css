@@ -5,11 +5,9 @@ body {
 }
 
 header {
-<<<<<<< HEAD
-    background-color: #0275d8;
-=======
+
     background-color: #1D1D29;
->>>>>>> 519b5e245e010c3e9e2e87cfd40cbd3c7d1b4348
+
     color: white;
     margin-bottom: 3em;
 }

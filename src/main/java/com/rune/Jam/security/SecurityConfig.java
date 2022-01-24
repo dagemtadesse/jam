@@ -35,12 +35,13 @@ public class SecurityConfig {
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
         return http
                 .authorizeRequests()
-                .antMatchers("/channel/2").hasRole("REGULAR")
-                .antMatchers("/channel/2").hasRole("ADMIN")
+                .antMatchers("/channel/3").hasRole("REGULAR")
+//                .antMatchers("/channel/2").hasRole("ADMIN")
                 .antMatchers("/", "/**").permitAll()
                 .and()
                 .formLogin()
                 .loginPage("/login")
+                .defaultSuccessUrl("/channel/2")
                 .and()
                 .build();
     }

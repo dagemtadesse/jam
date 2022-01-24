@@ -41,15 +41,11 @@ public class User implements UserDetails {
     private String email;
 
     @NotNull
-    private String address;
-
-    @Min(8)
-    @Max(30)
-    @NotNull
-    @NotBlank(message = "password is required")
     private String password;
 
-    private String occupation;
+    @NotBlank
+    private String address;
+
 
     @Enumerated(EnumType.STRING)
     private Role userRole;
@@ -60,7 +56,7 @@ public class User implements UserDetails {
     @OneToMany(mappedBy = "creator")
     private List<Channel> createdChannels = new ArrayList<>();
 
-    public User(String fullName,  String email, String address, String password) {
+    public User(String fullName,  String password, String email, String address) {
         this.fullName = fullName;
         this.email = email;
         this.address = address;
@@ -68,7 +64,7 @@ public class User implements UserDetails {
         this.userRole = Role.REGULAR;
     }
 
-<<<<<<< HEAD
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return Arrays.asList(new SimpleGrantedAuthority(this.getUserRole().name()));
@@ -96,11 +92,7 @@ public class User implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return true;
-=======
-    public User(String string, String string2, String string3, String string4, String string5, Role regular) {
->>>>>>> 519b5e245e010c3e9e2e87cfd40cbd3c7d1b4348
-    }
+        return true;}
 
     public static enum Role {
         REGULAR, ADMIN

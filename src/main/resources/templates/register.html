@@ -56,8 +56,8 @@
                             <label for="cPassword">Confirm Password</label>
                             <input type="password" class="form-control"  th:field="*{cPassword}" required>
                             <div 
-                                th:if="${#fields.hasErrors('cpassword')}" 
-                                th:errors="*{cpassword}">
+                                th:if="${#fields.hasErrors('cPassword')}"
+                                th:errors="*{cPassword}">
                             </div>
                         </div>
                         <div class="text-center p-2">
