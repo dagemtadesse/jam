@@ -50,7 +50,7 @@ public class ChannelController {
 
         if (bindingResult.hasErrors()) {
             model.addAttribute("user", user);
-            return "final/userProfile";
+            return "final/editCompany";
         }
 
         return "redirect:/profile";
@@ -65,7 +65,7 @@ public class ChannelController {
 
         if (bindingResult.hasErrors()) {
             model.addAttribute("user", user);
-            return "final/editProfile";
+            return "final/addCompany";
         }
 
         var newChannel = channelForm.toChannel();
