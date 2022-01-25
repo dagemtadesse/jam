@@ -14,12 +14,43 @@
     </nav>
 </header>
 
-<nav th:fragment="menu">
-        <a th:href="@{/}">Homepage</a>
-        <a th:href="@{/about}">About Me</a>
-        <a th:href="@{/blog}">Blog</a>
-        <a th:href="@{/contact}">Contact</a>
-    </nav>
+<div class="navigation" th:fragment="navigation">
+    <div class="nav-container">
+
+        <div class="nav-content">
+            <a th:href="@{/profile}">
+                <ion-icon name="person-outline" class="me-3"></ion-icon>
+                Profile Information
+            </a>
+        </div>
+
+
+        <div class="nav-content">
+            <a th:href="@{/editProfile}">
+                <ion-icon name="settings-outline" class="me-3"></ion-icon>
+                Edit Profile
+            </a>
+        </div>
+
+
+        <div class="nav-content">
+            <a th:href="@{/addChannel}">
+                <ion-icon name="bag-outline" class="me-3"></ion-icon>
+                Add a Company
+            </a>
+        </div>
+
+
+        <div class="nav-content">
+            <a th:href="@{/editChannel}">
+                <ion-icon name="information-circle-outline" class="me-3"> </ion-icon>
+                Edit Company Settings
+            </a>
+        </div>
+
+
+    </div>
+</div>
 
 <footer th:fragment="footer">
     <nav class="navbar navbar-expand-lg">
@@ -32,8 +63,8 @@
         </div>
 
     </nav>
-</footer>
 
+</footer>
 
 </body>
 </html>

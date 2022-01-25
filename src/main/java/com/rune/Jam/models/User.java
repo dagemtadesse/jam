@@ -37,7 +37,6 @@ public class User implements UserDetails {
     @Email
     @NotNull(message = "email is required")
     @NotEmpty
-    @Pattern(regexp = "^(.+)@(.+)$", message = "should be in format example@domain.com")
     private String email;
 
     @NotNull

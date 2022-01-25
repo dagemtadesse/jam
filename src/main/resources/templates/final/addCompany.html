@@ -5,129 +5,94 @@ xmlns:th="http://www.thymeleaf.org" lang="en">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" th:href="@{/css/addCompany.css}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../static/css/common.css">
-    <title>addCompany</title>
+    <link rel="stylesheet" th:href="@{/css/profile.css}">
+    <link rel="stylesheet" th:href="@{/css/search.css}">
+    <link rel="stylesheet" th:href="@{/css/common.css}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Add Channel</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <p><span>J</span><span class="a">A</span><span>M</span> </p>
-            </div>
-            <div class="search-box">
-                <input placeholder="Search For a Company" class="search-input" type="text">
-                <ion-icon name="search-outline"></ion-icon>
-            </div>
-            <div class="bookmark">
-                <a href="#"><ion-icon name="bookmarks-outline"></ion-icon></a>
-                <a href="#"><p>Bookmark</p></a>
-            </div>
-            <div class="profile-img">
-                <!-- <img src="vadim-bogulov-rdHrrFA1KKg-unsplash.jpg" alt="profile-image"> -->
-                <ion-icon name="chevron-down-outline"></ion-icon>
-            </div>
-            
-        </nav>
-    </header>
+    <div th:replace="./fragments/loggedInComponents :: headerWithOutBookMark"></div>
     <main>
-        <div class="container">
-            <div class="navigation">
-                <div class="nav-container">
-                    <a href="profile.html">
-                        <div class="nav-content">
-                            <ion-icon name="person-outline"></ion-icon>
-                            <p>Profile Information</p>
-                        </div>
-                    </a>
-                    <a href="editProfile.html">
-                        <div class="nav-content">
-                            <ion-icon name="settings-outline"></ion-icon>
-                            <p>Edit Profile</p>
-                        </div>
-                    </a>
-                    <a href="addCompany.html">
-                        <div class="nav-content">
-                            <ion-icon name="bag-outline"></ion-icon>
-                            <p>Add a Company</p>
-                        </div>
-                    </a>
-                    <a href="editCompany.html">
-                        <div class="nav-content">
-                            <ion-icon name="information-circle-outline"></ion-icon>
-                            <p>Edit Company Settings</p>
-                        </div>
-                    </a>
-                    
-                </div>
-            </div>
+        <div class="container d-flex">
 
+            <div th:replace="./fragments/components :: navigation"></div>
 
-            <div class="information">
-                <h1></h1>
+            <div class="information p-4">
+
                 <div class="info-container">
                     <div class="prof-info">
                         <p>Add a Company</p>
                     </div>
                     <div class="info-box">
-                        <div class="info-content">
-                            <label for="fullnaem">Name</label>
-                            <input type="text" name="fullname" placeholder="enter your fullName">
-                        </div>
-                        <div class="info-content">
-                            <label for="logo">Logo</label>
-                            <input type="file" name="logo" placeholder="">
-                            <ion-icon name="image-outline" ></ion-icon>
-                        </div>
-                        <div class="info-content">
-                            <label for="desc">Description</label>
-                            <input type="text" name="desc" placeholder="enter description">
-                        </div>
-                        <div class="info-content">
-                            <label for="email">Email</label>
-                            <input type="email" name="email" placeholder="enter your email">
-                        </div>
-                        <div class="info-content">
-                            <label for="location">Address</label>
-                            <input type="text" name="location" placeholder="enter your location">
-                        </div>
-                        <a href="" class="save-btn">Save</a>
+                        <form method="post" th:action="@{/createChannel}" th:object="${channelForm}" class="info-box">
+                            <div class="info-content">
+                                <label for="name">Name</label>
+                                <input type="text" th:field="*{name}"
+                                       th:class="|form-control ${#fields.hasErrors('name')? 'is-invalid': 'is-valid'}|"
+                                       class="form-control" placeholder="enter your fullName">
+                                <div
+                                        th:if="${#fields.hasErrors('name')}"
+                                        th:errors="*{address}"
+                                        class="invalid-feedback">
+                                </div>
+                            </div>
+
+    <!--                        <div class="info-content">-->
+    <!--                            <label for="logo">Logo</label>-->
+    <!--                            <input type="file" class="form-control" name="logo" placeholder="">-->
+    <!--                            <ion-icon name="image-outline" ></ion-icon>-->
+    <!--                        </div>-->
+
+                            <div class="info-content">
+                                <label for="description">Description</label>
+                                <input type="text" th:field="*{description}"
+                                       th:class="|form-control ${#fields.hasErrors('description')? 'is-invalid': 'is-valid'}|"
+                                       placeholder="enter description">
+                                <div
+                                        th:if="${#fields.hasErrors('description')}"
+                                        th:errors="*{address}"
+                                        class="invalid-feedback">
+                                </div>
+                            </div>
+
+                            <div class="info-content">
+                                <label for="email">Email</label>
+                                <input type="email" th:field="*{email}"
+                                       th:class="|form-control ${#fields.hasErrors('email')? 'is-invalid': 'is-valid'}|"
+                                       placeholder="enter your email">
+                                <div
+                                        th:if="${#fields.hasErrors('email')}"
+                                        th:errors="*{email}"
+                                        class="invalid-feedback">
+                                </div>
+                            </div>
+
+                            <div class="info-content">
+                                <label for="address">Address</label>
+                                <input type="text" th:class="|form-control ${#fields.hasErrors('address')? 'is-invalid': 'is-valid'}|"
+                                       th:field="*{address}" placeholder="enter your location">
+                                <div
+                                        th:if="${#fields.hasErrors('address')}"
+                                        th:errors="*{address}"
+                                        class="invalid-feedback">
+                                </div>
+                            </div>
+                            <button class="save-btn btn" type="submit" >Create</button>
+                        </form>
                     </div>
                     
                 </div>
             </div>
         </div>
     </main>
-    <footer>
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid  nav-footer-items">
-              <p class="navbar-brand fw-bold fs-4 m-0 justify-self-flex-start ps-5">JAM</p>
-              <ul class="nav">
-                <li class="nav-item">
-                  <a class="footer-link" href="../templates/index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="footer-link" href="../templates/registration.html">Register</a>
-                </li>
-                <li class="nav-item">
-                  <a class="footer-link" href="../templates/comment.html">Comments</a>
-                </li>
-                <li class="nav-item">
-                  <a class="footer-link" href="../templates/search.html">Search</a>
-                </li>
-              </ul>
-              <div>
-                <p class="copyright justify-self-flex-end align-self-center m-0 pe-5">&copy2022 JAM All rights reserved</p>
-              </div>
-            </div>
-  
-        </nav>
-                
-    </footer>
+
+    <div th:insert="/fragments/components :: footer"></div>
+
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -25,7 +25,7 @@ public class Channel {
     private String logo;
 
     @NotNull
-    @Size(min = 4, message = "channel name should be at least 4 characters long ")
+    @Size(min = 10, message = "channel name should be at least 4 characters long ")
     private String description;
    
     @NotNull
