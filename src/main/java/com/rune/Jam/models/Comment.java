@@ -39,7 +39,7 @@ public class Comment {
                 ", date=" + date +
                 ", upvoteCount=" + upvoteCount +
                 ", downVoteCount=" + downVoteCount +
-                ", user=" + user +
+                ", user=" + user.getId() +
                 '}';
     }
 }
