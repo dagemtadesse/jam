@@ -8,15 +8,15 @@
     <nav class="navbar navbar-expand-lg">
 
       <div class="container-fluid nav-footer-items">
-        <p class="navbar-brand fw-bold fs-4 m-0">JAM</p>
+        <a th:href="@{/login}" class="text-logo">JAM</a>
         <form class="d-flex" method="get" th:action="@{/search}">
-          <input class="form-control me-2" type="search" name="channelName" placeholder="Search a company" aria-label="Search">
+          <input class="form-control search-bar input-large" type="search" name="channelName" placeholder="Search a company" aria-label="Search">
           <button class="btn border border-primary text-dark search-btn" type="submit">
             <img th:src="@{/images/magnifier.svg}">
           </button>
         </form>
 
-        <div class="btn-group">
+        <div class="btn-group me-4">
             <form method="post" th:action="@{/bookmark/__${currentChan.channel_id}__}">
                 <button type="submit" class="btn me-2">
                     <img th:src="@{/images/new_bookmark.svg}" /> BookMark
@@ -55,13 +55,13 @@
         <div class="container-fluid nav-footer-items">
             <p class="navbar-brand fw-bold fs-4 m-0">JAM</p>
             <form class="d-flex" method="get" th:action="@{/search}">
-                <input class="form-control me-2" type="search" name="channelName" placeholder="Search a company" aria-label="Search">
-                <button class="btn border border-primary text-dark search-btn" type="submit">
+                <input class="form-control search-bar" type="search" name="channelName" placeholder="Search a company" aria-label="Search">
+                <button class="btn border border-primary text-dark search-btn me-3" type="submit">
                     <img th:src="@{/images/magnifier.svg}">
                 </button>
             </form>
 
-            <div class="btn-group">
+            <div class="btn-group me-4">
                 <div class="dropdown">
                     <button class="btn dropdown-toggle bookmark-btn" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                         <img th:src="@{/images/user.png}" class="rounded-start small_avatar " alt="...">
@@ -95,7 +95,7 @@
             <p class="navbar-brand fw-bold fs-4 m-0 justify-self-flex-start ps-5">JAM</p>
 
             <div>
-                <p class="copyright justify-self-flex-end align-self-center m-0 pe-5">&copy2022 JAM All rights reserved</p>
+                <a th:href="@{/login}" class="text-logo">JAM</a>
             </div>
         </div>
 

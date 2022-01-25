@@ -25,8 +25,6 @@ div.narrow {
     padding: 1em;
 }
 
-div.posted-comment {
-    margin: 0 1em 0 5em;
+div.posts {
+    margin-left: 5em;
 }
-
-

@@ -29,7 +29,7 @@
                         <p>Edit Profile</p>
                     </div>
                     <div class="info-box">
-                        <form th:action="@{/editProfile}" method="post" th:object="${profileForm}" class="info-box">
+                        <form th:action="@{/editProfile}" method="post" th:object="${profileForm}" class="info-box profile-btns">
                             <div class="info-content">
                                 <label for="fullName">Full Name</label>
 
@@ -69,8 +69,10 @@
                                 </div>
 
                             </div>
-
-                            <button class="save-btn btn" type="submit">Save</button>
+                            <div class="profile-btns">
+                                <button class="save-btn btn profile-btns" type="submit">Save</button>
+                            </div>
+                            
                         </form>
                     </div>
 
@@ -111,7 +113,10 @@
                                 >
                                 </div>
                             </div>
-                            <button class="save-btn btn" type="submit" >Change </button>
+                            <div class="profile-btns">
+                                <button class="save-btn btn profile-btns" type="submit" >Change </button>
+                            </div>
+                            
                         </form>
                     </div>
 

@@ -1,0 +1,11 @@
+#search-main {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    
+}
+
+.search-result {
+    width: 50%;
+    margin-bottom: 2em;
+}

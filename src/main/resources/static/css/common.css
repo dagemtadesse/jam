@@ -1,21 +1,31 @@
-body {
-    background-color: #e7ecef;
+header {
+    background-color: #0275d8;
+    color: white;
+    margin-bottom: 3em;
 }
 
-header {
-    background-color: #32292f;
+header a.login {
+    margin-left: 5em !important;
+}
+
+a.text-logo {
+    text-decoration: none;
     color: white;
-    margin-bottom: 1.5em;
+    font-weight: 700;
+    font-size: x-large;
 }
 
 a.btn, button.btn:not(#dropdownMenuButton1) {
-    border: 1px solid #705d56;
+    border: 1px solid white;
     border-radius: 0.2em;
-    color: #000;
-    background-color: rgba(255, 255, 255, .57);
+    color: white;
+    background-color: #0275d8;
 }
 
-
+a.header-btn:hover, a.header-btn:focus {
+    background-color: white !important;
+    color: #0275d8 !important;
+}
 
 footer {
     left: 0;
@@ -96,6 +106,30 @@ footer nav.navbar {
     padding: 1em 1.5em;
 }
 
-.letter-A {
-    color: #2e8aba;
+p.copy-txt {
+    color: rgba(255, 255, 255, .5);
+}
+
+button.search-btn {
+    border: none !important;
+}
+
+input.search-bar {
+    padding-right: 22em !important;
+    margin-left: 7em !important;
+}
+
+div.nav-content a:focus, div.nav-content a:hover {
+    color: black !important;
+}
+
+div.profile-btns {
+    display: flex;
+    justify-content: flex-end;
+}
+
+button.profile-btns {
+    width: 10em;
+    justify-self: flex-end;
+
 }

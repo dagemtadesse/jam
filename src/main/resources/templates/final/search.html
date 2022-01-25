@@ -13,11 +13,11 @@
 
   <div th:replace="./fragments/loggedInComponents :: headerWithOutBookMark"></div>
 
-    <main>
+    <main id="search-main">
 
       <div
         th:each="chan : ${chans}"
-        class="search-result mt-5 ms-5 me-5 d-flex justify-content-evenly">
+        class="search-result d-flex justify-content-evenly">
 
         <div class="col card mb-3" style="max-width: 540px;">
           <div class="row g-0">
@@ -62,7 +62,7 @@
 
     </main>
 
-    <div th:insert="/fragments/components :: footer"></div>
+    <div th:insert="/fragments/components :: footer" class="footer-contain"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
