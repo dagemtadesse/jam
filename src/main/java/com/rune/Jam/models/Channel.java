@@ -70,7 +70,6 @@ public class Channel {
                 ", address='" + address + '\'' +
                 ", email='" + email + '\'' +
                 ", verified=" + verified +
-                ", creator=" + creator.getId() +
                 ", posts=" + posts +
                 ", subChannels=" + subChannels +
                 '}';
