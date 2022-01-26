@@ -58,8 +58,7 @@
                       <div
                               th:if="${#fields.hasErrors('password')}"
                               th:errors="*{password}"
-                              class="invalid-feedback"
-                      >
+                              class="invalid-feedback">
                       </div>
 
                 <label for="registerPasswordConfirmInput" class="form-label">Confirm password</label>
@@ -68,7 +67,8 @@
                        id="registerPasswordConfirmInput" th:field="*{cPassword}">
                   <div
                           th:if="${#fields.hasErrors('cPassword')}"
-                          th:errors="*{cPassword}">
+                          th:errors="*{cPassword}"
+                          class="invalid-feedback">
                   </div>
 
               <div class="form-group">
