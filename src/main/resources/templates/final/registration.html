@@ -73,9 +73,10 @@
 
               <div class="form-group">
                   <label for="registerUserRole" class="form-label">Regular:</label>
-                  <input type="checkbox" value="false" th:field="*{isAdmin}" id="registerUserRole">
-                  <label for="registerUserAdmin" class="form-label">Admin:</label>
-                  <input type="checkbox" value="true" th:field="*{isAdmin}" id="registerUserAdmin">
+                  <input type="checkbox" value="false" th:field="*{isAdmin}"
+                         id="registerUserRole" class="ms-2 form-check-input" th:checked="${true}">
+                  <label for="registerUserAdmin" class="form-label ms-4">Admin:</label>
+                  <input type="checkbox" value="true" th:field="*{isAdmin}" id="registerUserAdmin" class="ms-2 form-check-input">
               </div>
 
 

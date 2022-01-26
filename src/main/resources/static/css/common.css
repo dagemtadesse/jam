@@ -4,6 +4,15 @@ header {
     margin-bottom: 3em;
 }
 
+.send-button{
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+}
 .inline-form{
     display: inline;
 }
@@ -75,7 +84,7 @@ li.nav-item {
 a.footer-link {
     text-decoration: none;
     padding: 0 2em;
-    color: rgba(255, 255, 255, .5);
+    color: rgba(255, 255, 255, .75);
     max-width: fit-content;
 }
 

@@ -36,9 +36,9 @@
                     <input type="email" class="form-control"  name="username" id="loginEmailInput" placeholder="email@adress.com">
 
                     <label for="loginPasswordInput" class="form-label">Password</label>
-                    <input type="password" name="password" class="form-control" id="loginPasswordInput">
-
-                    <button type="submit" class="btn btn-primary">Sign in</button>
+                    <input type="password" name="password" th:class="|form-control ${(param.error == null )? 'is-valid' : 'is-invalid'}|" id="loginPasswordInput">
+                    <div class="invalid-feedback" th:if="${param.error != null}">Unable to log in. Please try again</div>
+                    <button type="submit" class="btn btn-primary mt-2">Sign in</button>
                 </form>
 
                 <div class="last-action" id="#login_widget">
