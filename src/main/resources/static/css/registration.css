@@ -13,6 +13,7 @@ div.register-left {
 div.register-right {
     max-width: 55%;
     text-align: center;
+    gap: 1.5em;
 }
 
 div.register-right img {
