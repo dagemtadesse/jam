@@ -5,7 +5,7 @@
 <header th:fragment="header">
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid nav-footer-items">
-            <a th:href="@{/login}" class="text-logo">JAM</a>
+            <a th:href="@{/home}" class="text-logo">JAM</a>
             <div class="btn-group">
                 <a th:href="@{/register}" class="btn btn-primary header-btn register">Register</a>
                 <a th:href="@{/login#login_widget}" class="btn btn-primary header-btn login">Login</a>
@@ -55,10 +55,10 @@
 <footer th:fragment="footer">
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid  nav-footer-items">
-            <a th:href="@{/login}" class="text-logo ps-4">JAM</a>
+            <a th:href="@{/home}" class="text-logo ps-4">JAM</a>
 
             <div>
-                <p class="copyright justify-self-flex-end align-self-center m-0 pe-4 copy-txt">&copy2022 JAM All rights reserved</p>
+                <a th:href="@{/home}" class="text-logo">JAM</a>
             </div>
         </div>
 
