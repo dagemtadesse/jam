@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.stream.Collectors;
 
 @Controller
 @Slf4j
@@ -63,6 +64,21 @@ public class CommentController {
             userRepo.save(user);
         }
 
+        return "redirect:/search";
+    }
+
+    @PostMapping("/removeBookmark/{channelId}")
+    public String removeBookmark(@PathVariable Long channelId, Authentication authentication) {
+        var email = authentication.getName();
+        var user = userRepo.findUserByEmail(email);
+
+        var newBookmarks = user.getBookmarks()
+                .stream()
+                .filter(chan -> chan.getChannel_id() != channelId)
+                .collect(Collectors.toList());
+        user.setBookmarks(newBookmarks);
+
+        userRepo.save(user);
         return "redirect:/search";
     }
 }

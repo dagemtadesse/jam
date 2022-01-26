@@ -71,6 +71,15 @@
                           th:errors="*{cPassword}">
                   </div>
 
+              <div class="form-group">
+                  <label for="registerUserRole" class="form-label">Regular:</label>
+                  <input type="checkbox" value="false" th:field="*{isAdmin}" id="registerUserRole">
+                  <label for="registerUserAdmin" class="form-label">Admin:</label>
+                  <input type="checkbox" value="true" th:field="*{isAdmin}" id="registerUserAdmin">
+              </div>
+
+
+
               <button type="submit" class="btn btn-primary mb-3 mt-1">Register</button>
           </form>
           <div class="last-action">
@@ -87,7 +96,7 @@
 
     </main>
 
-    <div th:insert="./fragments/components :: footer"></div>
+    <div class="foot" th:insert="/fragments/components :: footer"></div>
 
 </body>
 </html>

@@ -35,8 +35,19 @@ public class SecurityConfig {
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
         return http
                 .authorizeRequests()
-                .antMatchers("/channel/**", "/search", "/create-post/**")
-                .access("hasRole('REGULAR') || hasRole('ADMIN')")
+                .antMatchers("/channel/**",
+                        "/search",
+                        "/create-post/**",
+                        "/create-comment/**",
+                        "/profile",
+                        "/editProfile",
+                        "/changePassword",
+                        "/bookmark/**",
+                        "/removeBookmark/**",
+                        "/search"
+                ).access("hasRole('REGULAR') || hasRole('ADMIN')")
+                .antMatchers("/addChannel", "/editChannel")
+                .hasRole("ADMIN")
                 .antMatchers("/", "/**").access("permitAll")
                 .and()
                 .formLogin()

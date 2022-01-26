@@ -55,12 +55,12 @@ public class User implements UserDetails {
     @OneToMany(mappedBy = "creator")
     private List<Channel> createdChannels = new ArrayList<>();
 
-    public User(String fullName,  String password, String email, String address) {
+    public User(String fullName,  String password, String email, String address, Role role) {
         this.fullName = fullName;
         this.email = email;
         this.address = address;
         this.password = password;
-        this.userRole = Role.REGULAR;
+        this.userRole = role;
     }
 
 

@@ -4,6 +4,25 @@ header {
     margin-bottom: 3em;
 }
 
+.inline-form{
+    display: inline;
+}
+
+button.trash-btn{
+    border-width: 0;
+    padding: 0;
+    margin-left: auto;
+}
+body {
+    position: relative;
+    min-height: 100vh
+}
+.foot{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
 header a.login {
     margin-left: 5em !important;
 }

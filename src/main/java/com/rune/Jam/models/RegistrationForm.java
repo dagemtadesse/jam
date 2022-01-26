@@ -29,12 +29,15 @@ public class RegistrationForm {
     @Size(min = 3, message = "field must be at least 5 characters long.")
     private String cPassword;
 
+    private Boolean isAdmin = false;
+
     public User toUser(PasswordEncoder encoder) {
         return new User(
                 this.getFullName(),
                 encoder.encode(this.getPassword()),
                 this.getEmail(),
-                this.getAddress()
+                this.getAddress(),
+                this.getIsAdmin() ? User.Role.ADMIN : User.Role.REGULAR
         );
     }
 }

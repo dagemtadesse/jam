@@ -1,5 +1,6 @@
 package com.rune.Jam.controllers;
 
+import com.rune.Jam.models.Channel;
 import com.rune.Jam.models.ChannelForm;
 import com.rune.Jam.models.ProfileForm;
 import com.rune.Jam.repositories.ChannelRepository;
@@ -41,16 +42,27 @@ public class ChannelController {
     }
 
     @PostMapping("/editChannel")
-    public String editChannel(@Valid ChannelForm channelFormForm,BindingResult bindingResult,
+    public String editChannel(@Valid ChannelForm channelForm,BindingResult bindingResult,
                               Authentication authentication , Model model
                             ) {
 
         var email = authentication.getName();
         var user = userRepo.findUserByEmail(email);
+        var channel = chanRepo.findById(channelForm.getId());
 
         if (bindingResult.hasErrors()) {
             model.addAttribute("user", user);
             return "final/editCompany";
+        }
+
+        if(channel.isPresent() && channel.get().getCreator().getId() == user.getId()) {
+            var editChannel = channel.get();
+            editChannel.setName(channelForm.getName());
+            editChannel.setAddress(channelForm.getAddress());
+            editChannel.setDescription(channelForm.getDescription());
+            editChannel.setEmail(channelForm.getEmail());
+
+            chanRepo.save(editChannel);
         }
 
         return "redirect:/profile";

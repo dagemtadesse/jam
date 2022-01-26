@@ -34,7 +34,7 @@
 
 
         <div class="nav-content">
-            <a th:href="@{/addChannel}">
+            <a th:if="${user.userRole.name() == 'ADMIN'}" th:href="@{/addChannel}">
                 <ion-icon name="bag-outline" class="me-3"></ion-icon>
                 Add a Company
             </a>
@@ -42,7 +42,7 @@
 
 
         <div class="nav-content">
-            <a th:href="@{/editChannel}">
+            <a th:if="${user.userRole.name() == 'ADMIN'}"th:href="@{/editChannel}">
                 <ion-icon name="information-circle-outline" class="me-3"> </ion-icon>
                 Edit Company Settings
             </a>
