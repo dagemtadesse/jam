@@ -23,11 +23,11 @@ button.trash-btn{
     margin-left: auto;
 }
 body {
-    position: relative;
+    position: absolute;
     min-height: 100vh
 }
 .foot{
-    position: relative;
+    position: absolute;
     bottom: 0;
     width: 100%;
 }
