@@ -9,7 +9,11 @@ div.main {
 
 img.comment-side {
     padding-right: 1em;
-    width: 6%;
+    width: 4.5%;
+}
+
+img.company-logo {
+    width: 11%;
 }
 
 div.rounded-border {
